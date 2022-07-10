@@ -1,0 +1,1 @@
+{"name":"CAPITALIZE LETTER","group":"CodeChef - BUG SPLASH","url":"https://www.codechef.com/BUGS2020/problems/IOI1803","interactive":false,"memoryLimit":256,"timeLimit":1000,"tests":[],"testType":"single","input":{"type":"stdin"},"output":{"type":"stdout"},"languages":{"java":{"mainClass":"Main","taskClass":"CAPITALIZELETTER"}},"srcPath":"e:\\vsc\\cp\\CAPITALIZE_LETTER.cpp"}

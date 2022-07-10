@@ -1,0 +1,32 @@
+{
+    "folders": [
+		{
+			"name": "cp",
+			"path": "."
+		},
+		{
+			"name": "Development",
+			"path": "..\\Development"
+		},
+		{
+			"name": "dev code]",
+			"path": "c:\\Users\\rigved singh\\Desktop\\dev code]"
+		},
+		{
+			"path": "c:\\Users\\rigved singh\\Desktop\\dev code"
+		}
+	],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "dev code]",
+        "files.associations": {
+            "ostream": "cpp",
+            "iostream": "cpp",
+            "bitset": "cpp",
+            "chrono": "cpp",
+            "algorithm": "cpp",
+            "random": "cpp",
+            "limits": "cpp",
+            "valarray": "cpp"
+        }
+    }
+}

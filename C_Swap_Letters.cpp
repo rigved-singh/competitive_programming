@@ -1,0 +1,152 @@
+#include <bits/stdc++.h>
+#define epsilon 0.0000000000001
+#define MOD 1000000007
+#define inf 7 * 1e18
+#define ninf -1 * 1e18
+#define nline "\n"
+#define lli long long int
+#define ll long long
+#define vi vector<int>
+#define all(v) (v).begin(), (v).end()
+#define vll vector<long long>
+#define pb push_back
+#define fs first
+#define sc second
+#define ppb pop_back
+#define ppf pop_front
+#define pf push_front
+#define vvll vector<vector<ll>>
+#define vvc vector<vector<char>>
+#define pii pair<int, int>
+#define pll pair<long long, long long>
+#define si set<int>
+#define mp make_pair
+#define sll set<long long>
+#define vpll vector<pair<ll, ll>>
+#define Bl_dem                        \
+    ios_base::sync_with_stdio(false); \
+    cin.tie(NULL);                    \
+    cout.tie(NULL);
+using namespace std;
+int dx[]{1, 0, 0, -1};
+int dy[]{0, 1, -1, 0};
+template <typename T>
+T tpow(T x, T y)
+{
+    ll res = 1;
+    while (y)
+    {
+        if (y % 2 == 0)
+            x *x;
+        res *= x;
+        y--;
+    }
+    return res;
+}
+ll mod_pow(ll a, ll b, ll mod = (ll)(1e9 + 7))
+{
+    ll res = 1;
+    while (b)
+    {
+        if (b & 1)
+        {
+            res = (res * a) % mod;
+        }
+        b /= 2;
+        a = (a * a) % mod;
+    }
+    return (res % mod);
+}
+template <typename T>
+T ceil(T x, T n)
+{
+    T ans = 0;
+    ans = x / n;
+    if (x % n)
+        ans++;
+    return ans;
+}
+template <typename P>
+P Lcm(P a, P b)
+{
+    return (a * b) / gcd(a, b);
+}
+template <typename T>
+T gcd(T a, T b)
+{
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+// COMBINOTORICS ---------------------------------------------------------------------------------
+ll fact(ll n)
+{
+    if (n <= 1)
+        return 1;
+    return n * fact(n - 1);
+}
+ll ncr(ll n, ll r) { return fact(n) / (fact(r) * fact(n - r)); }
+ll npr(ll n, ll r) { return fact(n) / fact(n - r); }
+/*---------------------------------------------------------------------------------------------
+Problem related to maths -----> think gcd
+CODE-------------------------------------------------------------------
+---------------------------------------------------------------------------------------- */
+
+int main()
+{
+    Bl_dem
+        ll n;
+        cin>> n;
+        string a , b;
+        cin>> a >> b;
+        ll x , y;
+         x = count(all(a) , 'a') + count(all(b) , 'a');
+         y = count(all(a) , 'b') + count(all(b) , 'b');
+        if( x&1 || y&1)
+        {
+            cout << -1 ;
+            return 0;
+        }
+        vll ab ,ba;
+        vpll ans;
+        for(int i = 0 ;i<n;i++)
+        {
+            if(a[i]!=b[i]) 
+            {
+                if(a[i]=='a') ab.pb(i);
+                else ba.pb(i);
+            }
+        }
+        // if((ab.size()+ ba.size())==0) 
+        // {
+        //     cout<< 0 ;
+        //     return 0 ;
+        // }
+        for(int i = 0 ;i<ab.size();i+=2)   
+        {
+            if(i+1 < ab.size())
+            ans.pb(mp(ab[i] , ab[i+1]));
+            else break;
+        }
+        for(int i= 0 ;i<ba.size() ;i+=2)
+        {
+            if(i+1<ba.size()) 
+            ans.pb(mp(ba[i] , ba[i+1]));
+            else break;
+        }
+
+        if( ba.size()&1 )
+        {
+            ans.pb(mp(ab.back() , ab.back()));
+            ans.pb(mp(ab.back() , ba.back()));
+        }
+
+        cout<< ans.size() << endl;
+        for(int i = 0 ;i< ans.size();i++)
+        cout<< ans[i].fs+1 << " " << ans[i].sc+1 << endl;
+
+
+
+
+    return 0;
+}

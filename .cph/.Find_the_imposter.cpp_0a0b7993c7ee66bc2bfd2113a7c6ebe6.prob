@@ -1,0 +1,1 @@
+{"name":"Find the imposter","group":"CodeChef - Code Starter","url":"https://www.codechef.com/CSTR2020/problems/AMONGUS","interactive":false,"memoryLimit":256,"timeLimit":2000,"tests":[],"testType":"single","input":{"type":"stdin"},"output":{"type":"stdout"},"languages":{"java":{"mainClass":"Main","taskClass":"FindTheImposter"}},"srcPath":"e:\\vsc\\cp\\Find_the_imposter.cpp"}

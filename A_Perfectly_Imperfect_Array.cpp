@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+#define MOD 1000000007
+#define lli long long int
+#define ll long long
+#define vi vector<int>
+#define vlli vector<long long int>
+#define pb push_back
+#define pii pair<int,int>
+#define si set<int>
+#define sll set<long long>
+#define cc ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+using namespace std;
+bool check(lli x)
+{
+    lli y=sqrt(x);
+    if(y*y!=x) return false ;
+    else return true;
+}
+int main()
+{
+cc
+int t;
+cin>>t;
+while(t--)
+{
+    lli n;
+    cin>>n;
+    lli arr[n];
+    int flag=0;
+    
+    for(lli i=0;i<n;i++) 
+    {
+        cin>>arr[i];
+        if(flag==0)
+        if(check(arr[i])==false) flag=1; 
+    }
+    if(flag) cout<<"YES"<<endl;
+    else cout<<"NO"<<endl;
+}
+return 0;
+}

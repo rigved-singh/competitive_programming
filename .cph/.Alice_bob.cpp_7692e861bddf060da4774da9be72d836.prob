@@ -1,0 +1,1 @@
+{"name":"Local: Alice_bob","url":"e:\\vsc\\cp\\Alice_bob.cpp","tests":[{"id":1640606228124,"input":"10\n78 66 6 60 18 84 36 96 72 48","output":""},{"id":1640606437119,"input":"4\n1 3 6 4","output":"Alice"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\vsc\\cp\\Alice_bob.cpp","group":"local","local":true}

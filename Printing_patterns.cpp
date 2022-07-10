@@ -1,0 +1,108 @@
+#include<bits/stdc++.h>
+#define MOD 1000000007
+#define nline "\n"
+#define lli long long int
+#define ll long long
+#define vi vector<int>
+#define vll vector<long long >
+#define pb push_back
+#define pii pair<int,int>
+#define pll pair<long long , long long >
+#define si set<int>
+#define mp make_pair
+#define sll set<long long>
+#define vpll vector<pair<ll,ll> > 
+#define Bl_dem ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+using namespace std;
+int dx[]{1,0,0,-1,-1,1,1,-1};
+int dy[]{0,1,-1,0,-1,1,-1,1};
+ template<typename T>
+T ceil( T x , T n)
+ { 
+T ans=0;
+ ans=x/n; 
+ if(x%n) ans++;
+return ans;
+}
+template<typename P>
+ P Lcm (P a, P b)
+ {
+ return (a*b)/gcd(a,b);
+}
+ template <typename G>
+ void swap(G *a, G *b)
+ {
+ ll temp=a; a=b; b=a;
+}
+ template<typename T>
+T gcd(T a, T b)
+{
+if(b==0) return a;
+return gcd(b,a%b);
+ } 
+//COMBINOTORICS ---------------------------------------------------------------------------------
+ll fact(ll n) { if(n<=1) return 1; return n*fact(n-1);}
+ll ncr(ll n , ll r){ return fact(n)/(fact(r)*fact(n-r));}
+ll npr(ll n , ll r) {return fact(n)/fact(n-r);}
+/*---------------------------------------------------------------------------------------------
+Problem related to maths -----> think gcd
+CODE-------------------------------------------------------------------
+---------------------------------------------------------------------------------------- */
+ 
+ll r, c, n , m; 
+    ll ar[1003][1003]{-1};
+    bool issafe(ll a ,ll b)
+    {
+        if(a>=0 and a<r and b>=0 and b<c ) return true;
+        return false;
+    }
+    struct point{
+        ll x ;ll  y ;
+        point(ll a, ll b){
+            x=a ;
+            y=b;
+        }
+    };
+    void bfs(ll n , ll m)
+    {
+        queue<point *> q;
+        point p(n , m);
+        q.push(&p);
+        while(!q.empty()){
+           auto it=q.front();
+           q.pop();
+
+        for(int i=0;i<8;i++)
+        {
+            if(issafe(it->x+dx[i],it->y+dy[i]))
+            {
+                if(ar[it->x+dx[i]][it->y+dy[i]]==-1)
+                {
+                    ar[it->x+dx[i]][it->y+dy[i]]=ar[it->x][it->y]+1;
+                    point A(it->x+dx[i],it->y+dy[i]);
+                    q.push(&A);
+                }
+            }
+        }
+        }
+    }
+int main()
+{
+Bl_dem
+
+
+    cin>> r >> c >> n >> m;
+   
+    for(int i=0;i<r;i++) for(int j=0;j<c;j++) ar[i][j]=-1;
+    ar[n][m]=0;
+   bfs(n,m);
+    for(int i=0;i<r;i++) 
+    {
+        for(int j=0;j<c;j++) cout<< ar[i][j] << " ";
+        cout<< '\n';
+
+    }
+    
+
+return 0;
+}
